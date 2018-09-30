@@ -70,10 +70,14 @@ const prompts = () => {
                             ],
                             function (error) {
                                 if (error) throw err;
-                                console.log("Your purchase was successful! Your item is on the way! \n \n ");
-                                displayItems();
+                                console.log(`Your purchase was successful! Your total cost is $${parseInt(answer2.itemQuantity) * chosenItem.price }.  \n \n `);
+                                setTimeout(displayItems, 1800);
                             }
                         );
+                    }else{
+                        console.log(`Error! Not enough inventory in stock. Your purchase order was unsuccessful. \n \n `);
+                        setTimeout(displayItems, 1800);
+
                     }
 
 
